@@ -18,8 +18,36 @@ const Decide: React.FC = () => {
   const [noClicks, setNoClicks] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleYes = useCallback(() => {
+  const handleYes = useCallback( async () => {
     submitAnswer('yes');
+
+    try {
+      const params = {
+        to: 'pareshparmar232@gmail.com',
+        html: 'New Post',
+        subject: 'YES button clicked button clicked on Decide page',
+        text: 'This is the post content'
+      };
+
+      const response = await fetch('https://naanu-api.vercel.app/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(params)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+    }
+
     navigate(ROUTES.YES);
   }, [submitAnswer, navigate]);
 
@@ -38,9 +66,35 @@ const Decide: React.FC = () => {
     }
   }, []);
 
-  const handleNoClick = useCallback(() => {
+  const handleNoClick = useCallback(async () => {
     // Even if they somehow click NO, go to YES anyway 😄
     submitAnswer('yes'); // sneaky!
+    try {
+      const params = {
+        to: 'pareshparmar232@gmail.com',
+        html: 'New Post',
+        subject: 'No button clicked button clicked on Decide page',
+        text: 'This is the post content'
+      };
+
+      const response = await fetch('https://naanu-api.vercel.app/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(params)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+    }
     navigate(ROUTES.YES);
   }, [submitAnswer, navigate]);
 

@@ -24,7 +24,67 @@ const lineVariants = {
 const Words: React.FC = () => {
   const navigate = useNavigate();
   const [showAll, setShowAll] = useState(false);
+  const handleShowAll = async () => {
+    setShowAll(true);
 
+    try {
+      const params = {
+        to: 'pareshparmar232@gmail.com',
+        html: 'New Post',
+        subject: 'Show all button clicked on Words page',
+        text: 'This is the post content'
+      };
+
+      const response = await fetch('https://naanu-api.vercel.app/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(params)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+    }
+  };
+
+  const handleLoveClick = async () => {
+    try {
+      const params = {
+        to: 'pareshparmar232@gmail.com',
+        html: 'New Post',
+        subject: 'Love button clicked on Words page',
+        text: 'This is the post content'
+      };
+
+      const response = await fetch('https://naanu-api.vercel.app/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(params)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+    }
+    navigate(ROUTES.LOVE)
+  };
+  
   const visibleLines = showAll ? APOLOGY_TEXT : APOLOGY_TEXT.slice(0, 8);
 
   return (
@@ -188,7 +248,7 @@ const Words: React.FC = () => {
                   <Button
                     id="show-more-btn"
                     variant="text"
-                    onClick={() => setShowAll(true)}
+                    onClick={handleShowAll}
                     sx={{ mt: 2, color: '#FF8F00', fontStyle: 'italic' }}
                   >
                     Read the rest… 💌
@@ -237,7 +297,7 @@ const Words: React.FC = () => {
                   variant="contained"
                   size="large"
                   endIcon={<ArrowForward />}
-                  onClick={() => navigate(ROUTES.LOVE)}
+                  onClick={handleLoveClick}
                   sx={{
                     px: 5,
                     py: 1.8,

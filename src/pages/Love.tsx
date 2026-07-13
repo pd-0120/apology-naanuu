@@ -60,6 +60,36 @@ const imageVariants = {
 const Love: React.FC = () => {
   const navigate = useNavigate();
 
+  const handleLoveClick = async () => {
+    try {
+      const params = {
+        to: 'pareshparmar232@gmail.com',
+        html: 'New Post',
+        subject: 'Last question button clicked on Love page',
+        text: 'This is the post content'
+      };
+
+      const response = await fetch('https://naanu-api.vercel.app/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(params)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+    }
+    navigate(ROUTES.DECIDE)
+  };
+
   const hearts = React.useMemo(
     () =>
       Array.from({ length: 25 }, (_, i) => ({
@@ -293,7 +323,7 @@ const Love: React.FC = () => {
                   variant="contained"
                   size="large"
                   endIcon={<ArrowForward />}
-                  onClick={() => navigate(ROUTES.DECIDE)}
+                  onClick={handleLoveClick}
                   sx={{
                     px: 5,
                     py: 1.8,

@@ -42,6 +42,35 @@ const cardVariants = {
 
 const Gallery: React.FC = () => {
   const navigate = useNavigate();
+  const handleNextClick = async () => {
+    try {
+      const params = {
+        to: 'pareshparmar232@gmail.com',
+        html: 'New Post',
+        subject: 'Gallaery Page opened and next word page clicked',
+        text: 'This is the post content'
+      };
+
+      const response = await fetch('https://naanu-api.vercel.app/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(params)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+    }
+    navigate(ROUTES.WORDS);
+  };
 
   return (
     <>
@@ -204,7 +233,7 @@ const Gallery: React.FC = () => {
                   variant="contained"
                   size="large"
                   endIcon={<ArrowForward />}
-                  onClick={() => navigate(ROUTES.WORDS)}
+                  onClick={handleNextClick}
                   sx={{
                     px: 5,
                     py: 1.8,
