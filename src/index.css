@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+/* ===========================
+   Global Reset & Base Styles
+   =========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Lato', 'Arial', sans-serif;
+  background-color: #FFF8E1;
+  color: #3E2723;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ===========================
+   Scrollbar styling
+   =========================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8E1;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #F9A825, #FF8F00);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #FF8F00, #E65100);
+}
+
+/* ===========================
+   Selection highlight
+   =========================== */
+::selection {
+  background-color: rgba(249, 168, 37, 0.3);
+  color: #3E2723;
+}
+
+/* ===========================
+   Smooth image rendering
+   =========================== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===========================
+   Focus styles
+   =========================== */
+:focus-visible {
+  outline: 2px solid #F9A825;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ===========================
+   Utility Classes
+   =========================== */
+.gradient-text {
+  background: linear-gradient(135deg, #E65100 0%, #F9A825 50%, #FF8F00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(249, 168, 37, 0.25);
+  border-radius: 20px;
+}
+
+/* ===========================
+   Page Transition Container
+   =========================== */
+.page-container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===========================
+   Floral background pattern
+   =========================== */
+.floral-bg {
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(249,168,37,0.06) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(255,143,0,0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(244,143,177,0.04) 0%, transparent 60%);
+}
+
+/* ===========================
+   Animation utilities
+   =========================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(-3deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+.heartbeat-animation {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* ===========================
+   Responsive utilities
+   =========================== */
+@media (max-width: 600px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 601px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
