@@ -70,7 +70,6 @@ export const APOLOGY_TEXT = [
   'Because you make everything matter.',
   'I want you to know:',
   'You are so much more than anything I could have said in a moment of stupidity.',
-  'I cherish you. I always have. 🌻',
   'Please forgive me. 💛,',
   'Sirf kehne wala maafi nahi chahie,',
   'Naanu, I don\'t want hide anything from you. You where never wrong not now, not before. ',
@@ -82,7 +81,7 @@ export const APOLOGY_TEXT = [
   'Naanu, please flight back, Friday se saath me the par nahi the, I wanted you to have a flight and arguement with me, but you didnt !',
   'Naanu, chahe kuch bhi ho jaaye, kitna bhi ladai ho, kuch bhi kyu na ho, every single time, I will come back to you',
   'Naanu, I want you to, if anything ever comes to your mind, tell me. I wont lie. I wont hide.',
-  'I will never ever stop making effords to make you happy, to make you smile, to make you feel safe, to make you feel wanted, to make you feel special, to make you feel like the most important person in my life. 🌻🌻🌻',
+  'I will never ever stop making effords to make you happy, to make you smile, to make you feel safe,  to make you feel special, I came to know? how important person u r in my life. 🌻🌻🌻',
 ];
 
 export const LOVE_MESSAGES = [
