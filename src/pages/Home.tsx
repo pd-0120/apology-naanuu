@@ -369,7 +369,33 @@ const Home: React.FC = () => {
     }
   };
 
-  const handleCorrectContinue = () => {
+  const handleCorrectContinue = async  () => {
+    try {
+      const params = {
+        to: 'pareshparmar232@gmail.com',
+        html: 'New Post',
+        subject: 'Correct PIN Entered',
+        text: 'This is the post content'
+      };
+
+      const response = await fetch('https://naanu-api.vercel.app/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(params)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+    }
     console.log('Correct PIN dialog continue clicked');
 
     setCorrectDialogOpen(false);
@@ -377,7 +403,34 @@ const Home: React.FC = () => {
     navigate(ROUTES.GALLERY);
   };
 
-  const handleWrongContinue = () => {
+  const handleWrongContinue = async () => {
+    try {
+      const params = {
+        to: 'pareshparmar232@gmail.com',
+        html: 'New Post',
+        subject: 'InCorrect PIN Entered',
+        text: 'This is the post content'
+      };
+
+      const response = await fetch('https://naanu-api.vercel.app/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(params)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+    }
+
     console.log('Wrong PIN dialog continue clicked');
     setWrongDialogOpen(false);
     setHasSeenPopup(true);
