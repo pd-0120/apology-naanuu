@@ -82,6 +82,7 @@ export const APOLOGY_TEXT = [
   'Naanu, please flight back, Friday se saath me the par nahi the, I wanted you to have a flight and arguement with me, but you didnt !',
   'Naanu, chahe kuch bhi ho jaaye, kitna bhi ladai ho, kuch bhi kyu na ho, every single time, I will come back to you',
   'Naanu, I want you to, if anything ever comes to your mind, tell me. I wont lie. I wont hide.',
+'Aaj bhi waise hi Intezaar karta hun aapka, jaise kal kiya karta tha',
   'I will never ever stop making effords to make you happy, to make you smile, to make you feel safe,  to make you feel special, I came to know? how important person u r in my life. 🌻🌻🌻',
 ];
 
