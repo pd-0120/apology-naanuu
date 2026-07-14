@@ -78,6 +78,7 @@ export const APOLOGY_TEXT = [
   'Nahi jaante ho aap, ki aapse kitna pyar ho gaya hai mujhe !',
   'I seriously can not able to show all of that, main iss pyar ko kabhi find nahi kar raha tha aur yahi mujhe mil gaya hai, ',
   'Aap dur hote ho to it feels like, I miss my home, my safe place. it feels like part of me is missing.',
+'Naanu, I can fight againt anyone who is trying to be a bad with you, but I can not fight you back, Kehne konto uss din keh diya maine ki haply ending, but mere dil ne w reject kar diya ki, nahi ho payega tujhse Paresh, but you want to see her happy, so make it worth Paresh',
   'Naanu, please flight back, Friday se saath me the par nahi the, I wanted you to have a flight and arguement with me, but you didnt !',
   'Naanu, chahe kuch bhi ho jaaye, kitna bhi ladai ho, kuch bhi kyu na ho, every single time, I will come back to you',
   'Naanu, I want you to, if anything ever comes to your mind, tell me. I wont lie. I wont hide.',
